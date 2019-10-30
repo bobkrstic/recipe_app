@@ -11,6 +11,7 @@ const App = () => {
   const [query, setQuery] = useState("chicken");
 
   // useEffect will make the request only ones since we added '[]'
+  // then will make the request only when the 'query' is sent by pressing the 'Search' button
   useEffect(() => {
     getRecipes();
   }, [query]);
