@@ -14,12 +14,24 @@
   width: 50%;
   border: none;
   padding: 10px;
+  font-size: 20px;
 }
 
 .search-button {
-  background: lightcoral;
+  background: rgb(230, 221, 221);
   border: none;
   padding: 10px 20px;
+  color: black;
+  font-size: 20px;
+}
+
+.search-button,
+.search-bar {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-button:hover {
+  background-color: #555555;
   color: white;
 }
 

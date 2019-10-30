@@ -8,10 +8,12 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
+  // initial state 'query' will have a value of 'chicken'
+  const [query, setQuery] = useState("tilapia");
 
-  // useEffect will make the request only ones since we added '[]'
+  // useEffect will make the request only once since we added '[]'
   // then will make the request only when the 'query' is sent by pressing the 'Search' button
+  // actually when query is updated
   useEffect(() => {
     getRecipes();
   }, [query]);
@@ -21,6 +23,9 @@ const App = () => {
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     const data = await response.json();
+
+    // now with data returned from the API we are saying 'recipes = data.hits'
+    // at the moment, 'recipes' is an empty array, STATE without any data
     setRecipes(data.hits);
     console.log(data.hits);
   };
@@ -46,14 +51,15 @@ const App = () => {
           value={search}
           onChange={updateSearch}
         />
+
         <button className="search-button" type="submit">
           Search
         </button>
       </form>
       <div className="recipes">
-        {recipes.map(rec => (
+        {recipes.map((rec, i) => (
           <Recipe
-            key={rec.recipe.label}
+            key={i}
             title={rec.recipe.label}
             calories={rec.recipe.calories}
             image={rec.recipe.image}
