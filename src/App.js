@@ -8,7 +8,7 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  // initial state 'query' will have a value of 'chicken'
+  // initial state 'query' will have a value of 'tilapia'
   const [query, setQuery] = useState("tilapia");
 
   // useEffect will make the request only once since we added '[]'

@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./recipe.module.css";
 
+// deconstruct props
 const Recipe = ({ title, calories, image, ingredients }) => {
   return (
     <div className={style.recipe}>

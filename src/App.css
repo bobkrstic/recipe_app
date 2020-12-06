@@ -1,5 +1,7 @@
 .App {
+  /* 100% of the veiwport */
   min-height: 100vh;
+  /* webgradients.com */
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 }
 
