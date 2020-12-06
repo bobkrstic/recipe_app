@@ -18,6 +18,7 @@ const App = () => {
     getRecipes();
   }, [query]);
 
+  //
   const getRecipes = async () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
@@ -30,12 +31,12 @@ const App = () => {
     console.log(data.hits);
   };
 
-  const updateSearch = e => {
+  const updateSearch = (e) => {
     setSearch(e.target.value);
     // console.log(search);
   };
 
-  const getSearch = e => {
+  const getSearch = (e) => {
     // to stop page refresh
     e.preventDefault();
     setQuery(search);
