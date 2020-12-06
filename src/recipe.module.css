@@ -1,3 +1,9 @@
+/* this css cares only about teh Recipe.js component
+recipe.module.css
+- hence, names of classes can be the same as in other components
+- it will not make a difference. 
+*/
+
 .recipe {
   border-radius: 10px;
   box-shadow: 0px 5px 20px black;
